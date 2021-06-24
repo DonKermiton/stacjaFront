@@ -1,1 +1,18 @@
-<p>add-vehicle works!</p>
+<form [formGroup]="addForm" (ngSubmit)="onAdd()">
+    <div class="mb-3">
+      <label for="VIN" class="form-label">Email </label>
+      <input id="VIN" class="form-control form-control-sm" type="text"
+             placeholder="Email" aria-label=".form-control-sm example"
+            [formControlName]="addVehicleEnum."
+      >
+    </div>
+    <div class="mb-3">
+      <label for="loginPassword" class="form-label">Password</label>
+      <input id="loginPassword" class="form-control form-control-sm" type="password"
+             placeholder="Password" aria-label=".form-control-sm example"
+             [formControlName]="'password'"
+      >
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary w-100">Logowanie</button>
+  </form>
