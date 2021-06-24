@@ -1,0 +1,52 @@
+@import "/src/variables";
+//
+
+$width-container: 25%;
+#wrapper {
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 25%;
+
+  top:0;
+  right: -$width-container;
+  z-index: 15;
+  background-color: $light-blue;
+
+  transition: .3s;
+
+  &.active {
+    right: 0
+  }
+}
+
+.close-btn {
+  height: 45px;
+  line-height: 45px;
+  width: 100%;
+  background-color: $light-orange;
+  cursor: pointer;
+}
+
+.mode-btn {
+  height: 40px;
+  text-transform: capitalize;
+  border: 1px solid $light-orange;
+  line-height: 40px;
+  transition: .3s;
+
+
+  &:hover {
+    background-color: $light-orange;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+form {
+  color: white;
+  label {
+    display: block;
+    text-align: center;
+  }
+}

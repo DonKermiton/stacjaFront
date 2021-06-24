@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "/src/variables";
+
+.bg-deep-blue {
+  background-color: $deep-blue;
+  color: white;
+}
+
+.bg-light-blue {
+  background-color: $light-blue;
+}
+
+.border-bottom-red {
+  border-bottom: 2px solid $hot-red;
+}

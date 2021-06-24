@@ -1,0 +1,11 @@
+$height-main: 3rem;
+
+#wrapper {
+  height: $height-main;
+  #main-container {
+    div {
+      height: $height-main;
+      line-height: $height-main;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+<div id="wrapper" class="shadow" #rootEl>
+  <div class="text-center mt-3">
+    <h5 class="close-btn" (click)="closeModal()">Zamknij</h5>
+  </div>
+
+  <hr>
+
+  <div class="d-flex ">
+      <div class="flex-fill text-center mode-btn" (click)="mode = 'login'">
+        <a>login</a>
+      </div>
+
+      <div class="d-flex col-1 justify-content-center align-items-center">
+        |
+      </div>
+
+      <div class="flex-fill text-center mode-btn" (click)="mode = 'register'">
+        <a>rejestracja</a>
+      </div>
+  </div>
+
+  <hr>
+
+  <ng-container *ngTemplateOutlet="mode === 'login' ? login : register">
+
+  </ng-container>
+
+
+  <div class="" *ngIf="currentlyLoggedEmail">
+    <h5>Obecnie zalogowano</h5>
+    <hr>
+    <span>{{currentlyLoggedEmail}}</span>
+    <hr>
+    <div>
+      <div class="w-100" role="group" aria-label="Basic outlined example">
+        <h5 class="bg-deep-blue w-100" [routerLink]="'/user/dashboard'" >Wejdź</h5>
+        <h5 class="bg-deep-blue w-100" (click)="authService.logout()">Wyloguj</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #login>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div class="mb-3">
+      <label for="loginEmail" class="form-label">Email </label>
+      <input id="loginEmail" class="form-control form-control-sm" type="text"
+             placeholder="Email" aria-label=".form-control-sm example"
+            [formControlName]="'email'"
+      >
+    </div>
+    <div class="mb-3">
+      <label for="loginPassword" class="form-label">Password</label>
+      <input id="loginPassword" class="form-control form-control-sm" type="password"
+             placeholder="Password" aria-label=".form-control-sm example"
+             [formControlName]="'password'"
+      >
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary w-100">Logowanie</button>
+  </form>
+</ng-template>
+
+<ng-template #register>
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <div class="mb-3">
+      <label for="firstName" class="form-label">Imię </label>
+      <input id="firstName" class="form-control form-control-sm" type="text"
+             placeholder="Imię" aria-label=".form-control-sm example"
+             [formControlName]="'first_name'"
+      >
+    </div>
+    <div class="mb-3">
+      <label for="secondName" class="form-label">Nazwisko </label>
+      <input id="secondName" class="form-control form-control-sm" type="text"
+             placeholder="Nazwisko" aria-label=".form-control-sm example"
+             [formControlName]="'second_name'"
+      >
+    </div>
+    <div class="mb-3">
+      <label for="registerEmail" class="form-label">Email </label>
+      <input id="registerEmail" class="form-control form-control-sm" type="text"
+             placeholder="Email" aria-label=".form-control-sm example"
+             [formControlName]="'email'">
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Numer telefonu </label>
+      <input id="phone" class="form-control form-control-sm" type="text"
+             placeholder="Numer telefonu" aria-label=".form-control-sm example"
+             [formControlName]="'phone_number'"
+      >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input id="exampleInputPassword1" class="form-control form-control-sm" type="password"
+             placeholder="Password" aria-label=".form-control-sm example"
+             [formControlName]="'password'">
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary w-100">Rejestruj</button>
+  </form>
+</ng-template>
