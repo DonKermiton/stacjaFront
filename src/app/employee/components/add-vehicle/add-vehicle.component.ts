@@ -1,7 +1,7 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AddVehicleEnum } from './add-vehicle.enum';
-import {AddCarService} from '../../services/add-car.service';
+import {CarService} from '../../services/car.service';
 
 @Component({
   selector: 'app-add-vehicle',
@@ -14,7 +14,7 @@ export class AddVehicleComponent implements OnInit {
   public addVehicleEnum: typeof AddVehicleEnum = AddVehicleEnum;
 
   constructor(private fb: FormBuilder,
-              private addCarService: AddCarService) {
+              private addCarService: CarService) {
     this.addForm = fb.group({});
   }
 
