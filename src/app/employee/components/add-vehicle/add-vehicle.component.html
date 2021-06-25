@@ -1,18 +1,99 @@
 <form [formGroup]="addForm" (ngSubmit)="onAdd()">
-    <div class="mb-3">
-      <label for="VIN" class="form-label">Email </label>
-      <input id="VIN" class="form-control form-control-sm" type="text"
-             placeholder="Email" aria-label=".form-control-sm example"
-            [formControlName]="addVehicleEnum."
-      >
-    </div>
-    <div class="mb-3">
-      <label for="loginPassword" class="form-label">Password</label>
-      <input id="loginPassword" class="form-control form-control-sm" type="password"
-             placeholder="Password" aria-label=".form-control-sm example"
-             [formControlName]="'password'"
-      >
-    </div>
-    <hr>
-    <button type="submit" class="btn btn-primary w-100">Logowanie</button>
-  </form>
+  <div class="mb-3">
+    <label [for]="addVehicleEnum.VIN" class="form-label">VIN </label>
+    <input [id]="addVehicleEnum.VIN" class="form-control form-control-sm" type="text"
+           placeholder="VIN" aria-label=".form-control-sm example"
+           [formControlName]="addVehicleEnum.VIN"
+    >
+  </div>
+
+  <hr>
+
+  <div class="mb-3">
+    <label [for]="addVehicleEnum.COMPANY" class="form-label">Producent </label>
+    <input [id]="addVehicleEnum.COMPANY" class="form-control form-control-sm" type="text"
+           placeholder="Producent" aria-label=".form-control-sm example"
+           [formControlName]="addVehicleEnum.COMPANY"
+    >
+  </div>
+
+  <hr>
+
+  <div class="mb-3">
+    <label [for]="addVehicleEnum.MODEL" class="form-label">Model </label>
+    <input [id]="addVehicleEnum.MODEL" class="form-control form-control-sm" type="text"
+           placeholder="Model" aria-label=".form-control-sm example"
+           [formControlName]="addVehicleEnum.MODEL"
+    >
+  </div>
+
+  <hr>
+
+  <div class="mb-3">
+    <label [for]="addVehicleEnum.REVIEW_DATE" class="form-label">Termin ostatniego przeglądu </label>
+    <input [id]="addVehicleEnum.REVIEW_DATE" class="form-control form-control-sm" type="date"
+           placeholder="termin ostatniego przeglądu" aria-label=".form-control-sm example"
+           [formControlName]="addVehicleEnum.REVIEW_DATE"
+    >
+  </div>
+
+  <hr>
+
+  <div class="mb-3">
+    <label [for]="addVehicleEnum.PLATE" class="form-label">Rejestracja </label>
+    <input [id]="addVehicleEnum.PLATE" class="form-control form-control-sm" type="text"
+           placeholder="Rejestracja" aria-label=".form-control-sm example"
+           [formControlName]="addVehicleEnum.PLATE"
+    >
+  </div>
+
+  <hr>
+
+  <div class="mb-3">
+    <label [for]="addVehicleEnum.PRODUCTION_YEAR" class="form-label">Rok produkcji </label>
+    <input [id]="addVehicleEnum.PRODUCTION_YEAR" class="form-control form-control-sm" type="text"
+           placeholder="Rok produkcji" aria-label=".form-control-sm example"
+           [formControlName]="addVehicleEnum.PRODUCTION_YEAR"
+    >
+  </div>
+
+  <hr>
+
+  <div class="mb-3">
+    <label [for]="addVehicleEnum.TYPE" class="form-label">Typ </label>
+    <select [id]="addVehicleEnum.ENERGY_SOURCE"  class="form-select"
+            aria-label="Default select example"  [formControlName]="addVehicleEnum.TYPE">
+      <option value="Sedan">Sedan</option>
+      <option value="Kombi">Kombi</option>
+      <option value="Hatchback">Hatchback</option>
+    </select>
+  </div>
+
+  <hr>
+
+  <div class="mb-3">
+    <label [for]="addVehicleEnum.ENERGY_SOURCE" class="form-label">Źródło energii </label>
+    <select [id]="addVehicleEnum.ENERGY_SOURCE"  class="form-select"
+            aria-label="Default select example"  [formControlName]="addVehicleEnum.ENERGY_SOURCE">
+      <option value="Benzyna">Benzyna</option>
+      <option value="Diesel">Diesel</option>
+      <option value="Hybryda">Hybryda</option>
+      <option value="Elektryczny">Elektryczny</option>
+      <option value="Wodorowy">Wodorowy</option>
+    </select>
+
+  </div>
+
+  <hr>
+
+  <div class="mb-3">
+    <label [for]="addVehicleEnum.CAPACITY" class="form-label">Pojemność </label>
+    <input [id]="addVehicleEnum.CAPACITY" class="form-control form-control-sm" type="text"
+           placeholder="Pojemność" aria-label=".form-control-sm example"
+           [formControlName]="addVehicleEnum.CAPACITY"
+    >
+  </div>
+
+  <hr>
+  <button type="submit" class="btn btn-primary w-100">Logowanie</button>
+</form>
