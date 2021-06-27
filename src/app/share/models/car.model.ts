@@ -8,4 +8,6 @@ export interface CarModel {
   type: string;
   energy_source: string;
   capacity: string;
+  doc?: string;
+  ownerId?: string;
 }

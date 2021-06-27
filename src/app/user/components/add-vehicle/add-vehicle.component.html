@@ -1,0 +1,47 @@
+<form [formGroup]="addVehicleForm" (ngSubmit)="findCar()">
+  <div class="d-flex justify-content-center">
+    <div class="col-5">
+      <div class="mb-5">
+        <label [for]="carInfoEnum.VIN" class="form-label">VIN </label>
+        <input [id]="carInfoEnum.VIN" class="form-control form-control-sm" type="text"
+               placeholder="VIN" aria-label=".form-control-sm example"
+               [formControlName]="carInfoEnum.VIN"
+        >
+      </div>
+      <hr>
+      <div class="mb-5">
+        <label [for]="carInfoEnum.PLATE" class="form-label">Tablica rejestracyjna </label>
+        <input [id]="carInfoEnum.PLATE" class="form-control form-control-sm" type="text"
+               placeholder="Tablica rejestracyjna" aria-label=".form-control-sm example"
+               [formControlName]="carInfoEnum.PLATE"
+        >
+      </div>
+      <hr>
+      <div class="mb-3">
+        <label [for]="carInfoEnum.REVIEW_DATE" class="form-label">Termin ostatniego przeglądu </label>
+        <input [id]="carInfoEnum.REVIEW_DATE" class="form-control form-control-sm" type="date"
+               placeholder="termin ostatniego przeglądu" aria-label=".form-control-sm example"
+               [formControlName]="carInfoEnum.REVIEW_DATE"
+        >
+      </div>
+
+      <hr>
+      <button type="submit" class="w-100 btn btn-primary">
+        Submit
+      </button>
+    </div>
+  </div>
+
+</form>
+
+
+<ng-container *ngIf="car">
+
+  <div class="d-flex justify-content-center mt-5">
+    <div class="col-5" (click)="addCar()">
+      <div class="list-group-item">{{car.model}} | {{car.company}} | {{car.production_year}}</div>
+    </div>
+  </div>
+
+
+</ng-container>

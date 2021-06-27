@@ -1,1 +1,16 @@
-<p>car-info works!</p>
+<div class="card">
+  <div class="card-header">
+    {{carInfo ? carInfo.vin : 'ładowanie'}}
+  </div>
+  <div class="card-body" *ngIf="carInfo">
+    <h5 class="card-title">{{carInfo.company}} {{carInfo.model}}</h5>
+    <p class="card-text">pojemność: {{carInfo.capacity}}</p>
+    <p class="card-text">typ silnika: {{carInfo.energy_source}}</p>
+    <p class="card-text">rejestracja: {{carInfo.plate}}</p>
+    <p class="card-text">rok produkcji: {{carInfo.production_year}}</p>
+    <p class="card-text">data ostatniego przeglądu: {{carInfo.review_date}}</p>
+    <p class="card-text">typ: {{carInfo.type}}</p>
+    <a class="btn btn-primary">Dodaj serwis</a>
+    <a class="btn btn-primary" (click)="delete()">Usuń</a>
+  </div>
+</div>

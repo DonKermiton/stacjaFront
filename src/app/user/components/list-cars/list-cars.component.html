@@ -1,0 +1,38 @@
+<div class="d-flex">
+  <div class="col-6">
+    <div class="list-group">
+      <a  class="list-group-item list-group-item-action"
+          *ngFor="let car of (carList | async)"
+          (click)="selectCar(car)"
+          [class.active]="car?.vin === selectedCar?.vin"
+      >
+        <span>{{car.company}}</span>
+        <br>
+        <span>{{car.model}}</span>
+
+      </a>
+
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        {{selectedCar ? selectedCar.vin : 'Wybierz pojazd'}}
+      </div>
+      <div class="card-body" *ngIf="selectedCar">
+        <h5 class="card-title">{{selectedCar.company}} {{selectedCar.model}}</h5>
+        <p class="card-text">pojemność: {{selectedCar.capacity}}</p>
+        <p class="card-text">typ silnika: {{selectedCar.energy_source}}</p>
+        <p class="card-text">rejestracja: {{selectedCar.plate}}</p>
+        <p class="card-text">rok produkcji: {{selectedCar.production_year}}</p>
+        <p class="card-text">data ostatniego przeglądu: {{selectedCar.review_date}}</p>
+        <p class="card-text">typ: {{selectedCar.type}}</p>
+        <a class="btn btn-primary">Dodaj serwis</a>
+        <a class="btn btn-primary" (click)="delete()">Usuń</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
